@@ -19,7 +19,7 @@ async function command(msg: Message, args: string[]) {
         return;
     }
 
-    addUserToDatabase(msg, parsedUrl)
+    addUserToDatabase(msg, parsedUrl) // gun
 
     function parseScoreSaberLink(url: string) {
         if (url.includes('scoresaber.com/u')) {
