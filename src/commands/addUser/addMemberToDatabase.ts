@@ -18,7 +18,7 @@ function addUser(msg: Message, scoresaber: string) {
             addUserToFirestore()
             return;
         }
-        msg.reply('That scoresaber user is allready registered')
+        msg.reply('That scoresaber user is already registered')
     })
 
     function addUserToFirestore() {
@@ -30,9 +30,11 @@ function addUser(msg: Message, scoresaber: string) {
                 return;
             }
     
-            msg.reply("You're allready registered, contact a staff member if you don't have the Member role")
+            msg.reply("You're already registered, contact a staff member if you don't have the Member role")
         })
     }
+
+    msg.channel.send('Linked you to a profile :)')
 }
 
 export default addUser

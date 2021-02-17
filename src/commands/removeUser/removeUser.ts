@@ -26,7 +26,7 @@ function command(msg: Message, args: string[]) {
         }
 
         msg.channel.startTyping()
-        await (user.roles.remove(msg.guild.roles.cache.find(r => r.id == process.env.ROLE)))
+
         await firestore.collection('users').doc(user.id).delete()
         msg.channel.send('Deleted.')
         msg.channel.stopTyping(true)
