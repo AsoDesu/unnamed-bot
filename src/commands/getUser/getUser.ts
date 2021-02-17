@@ -45,15 +45,6 @@ function command(msg: Message, args: string[]) {
                     "name": "Country Rank",
                     "value": `#${scoreSaberUser.playerInfo.countryRank}`,
                     "inline": true
-                },
-                {
-                    "name": "Balance",
-                    "value": `${data.bal ? data.bal : 0}xp`,
-                    "inline": true
-                },
-                {
-                    "name": "Level",
-                    "value": `${data.level ? data.level : 1}`
                 }
             ]
         }

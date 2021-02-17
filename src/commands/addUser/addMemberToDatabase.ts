@@ -5,7 +5,6 @@ import 'firebase/auth'
 import 'firebase/firestore'
 
 import '../../firebaseinnit'
-import addRole from './addMemberRole'
 
 var auth = firebase.auth()
 var database = firebase.firestore()
@@ -28,7 +27,6 @@ function addUser(msg: Message, scoresaber: string) {
                 userRef.set({
                     scoresaberId: scoresaber
                 }, {merge: true})
-                addRole(msg)
                 return;
             }
     
