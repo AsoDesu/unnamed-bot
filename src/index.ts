@@ -11,6 +11,8 @@ import neko from './commands/neko'
 import createRR from './commands/ReactionRoles/create'
 import removeRR from './commands/ReactionRoles/remove'
 
+import question from './modules/questions'
+
 // Moduels
 import userLeave from './modules/userLeave'
 import userJoin from './modules/userJoin'
@@ -21,6 +23,8 @@ client.on('message', async (msg: Discord.Message) => {
     if (msg.author.bot) return
 
     if (!msg.guild) { return; }
+
+    if (!msg.content.startsWith(process.env.PREFIX)) { question(msg); return; }
 
     const args = msg.content.toLowerCase().slice(process.env.PREFIX.length).split(/ +/)
     const command = args.shift().toLowerCase()

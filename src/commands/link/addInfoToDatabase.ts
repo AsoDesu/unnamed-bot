@@ -14,7 +14,9 @@ type addInfoArr = {
     twitch?: string,
     birthday?: string,
     color?: string,
-    status?: string
+    status?: string,
+    minecraft?: string,
+    scoresaberId?: string
 }
 
 async function addUser(uid: string, item: string, content: string) {
@@ -37,6 +39,12 @@ async function addUser(uid: string, item: string, content: string) {
         case 'status':
             addInfo.status = content
             break;
+        case 'mc':
+            addInfo.minecraft = content
+            break;
+        case 'scoresaber':
+            addInfo.scoresaberId = content
+            break
     }
 
     await userRef.set(addInfo, { merge: true })
